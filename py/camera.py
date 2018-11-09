@@ -3,7 +3,7 @@ import time
 
 camera = picamera.PiCamera()
 camera.resolution = (2592, 1944)
-/*camera.annotate_text = "Time: " + time.strftime("%H:%M:%S")*/
+#camera.annotate_text = "Time: " + time.strftime("%H:%M:%S")
 
 camera.start_preview()
 time.sleep(5)
