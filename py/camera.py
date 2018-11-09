@@ -37,7 +37,7 @@ if data is None:
 
 data.append(timeStart)
 
-with open('data.json', 'w') as outfile:
+with open(storage_path, 'w') as outfile:
     json.dump(data, outfile)
 
 
