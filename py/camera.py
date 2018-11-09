@@ -11,7 +11,7 @@ camera.annotate_text = "Time: %s" % time.strftime("%H:%M:%S")
 camera.annotate_text_size = 50
 time.sleep(5)
 
-camera.capture('/var/www/raspberry_reactjs/camera/image.jpg')
+camera.capture('/var/www/dist/camera/image.jpg')
 camera.stop_preview()
 
 camera.close()
