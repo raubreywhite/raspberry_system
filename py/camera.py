@@ -5,7 +5,10 @@ camera = picamera.PiCamera()
 camera.resolution = (2592, 1944)
 
 camera.start_preview()
-camera.annotate_text = "Time: " + time.strftime("%H:%M:%S")
+camera.annotate_background = picamera.Color('blue')
+camera.annotate_foreground = picamera.Color('yellow')
+camera.annotate_text = "Time: %s" % time.strftime("%H:%M:%S")
+camera.annotate_text_size = 50
 time.sleep(5)
 camera.capture('/var/www/raspberry_reactjs/camera/image.jpg')
 camera.stop_preview()
