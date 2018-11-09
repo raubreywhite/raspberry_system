@@ -21,23 +21,21 @@ camera.stop_preview()
 
 camera.close()
 
-data_base = None
+data = None
 if os.path.exists(storage_path):
     with open(storage_path,'r') as f:
         try:
-            data_base = json.load(f)
-            print('loaded that: ',data_base)
+            data = json.load(f)
+            print('loaded that: ',data)
         except Exception as e:
             print("got %s on json.load()" % e)
 
 
-if data_base is None:
+if data is None:
     print('Create new dataset')
-    data_base = [ ]
+    data = [ ]
 
-data_base.append(timeStart)
-
-data_base_json = json.dumps(data_base)
+data.append(timeStart)
 
 with open('data.json', 'w') as outfile:
     json.dump(data, outfile)
