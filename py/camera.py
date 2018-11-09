@@ -1,9 +1,11 @@
-from picamera import PiCamera
-from time import sleep
+import picamera
+import time
 
-camera = PiCamera()
+camera = picamera.PiCamera()
+camera.resolution = (2592, 1944)
+camera.annotate_text = "Time: " + time.strftime("%H:%M:%S")
 
 camera.start_preview()
-sleep(5)
+time.sleep(5)
 camera.capture('/var/www/raspberry_reactjs/camera/image.jpg')
 camera.stop_preview()
